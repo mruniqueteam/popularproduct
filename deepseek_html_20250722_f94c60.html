@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ডিজিটাল প্রোডাক্ট স্টোর - প্রিমিয়াম টুলস ও রিসোর্স</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --warning: #ff9e00;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        nav a:hover, nav a.active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .cta-button {
+            background: var(--accent);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(247, 37, 133, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(247, 37, 133, 0.5);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(120deg, #3a0ca3, #4361ee);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.03)" points="0,100 100,0 100,100"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+        
+        .hero h2 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%;
+            max-width: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-size: 1.2rem;
+            color: #555;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .feature-icon {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .feature-content {
+            padding: 25px;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        /* Product Sections */
+        .products {
+            padding: 60px 0;
+            background: #f0f3ff;
+        }
+        
+        .module-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+        
+        .module-card h3 {
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        
+        .tool-categories, .resource-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        
+        .tool-category, .resource-category {
+            background: rgba(67, 97, 238, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            transition: var(--transition);
+        }
+        
+        .tool-category:hover, .resource-category:hover {
+            transform: translateY(-5px);
+            background: rgba(67, 97, 238, 0.1);
+        }
+        
+        .tool-category h4, .resource-category h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tool-category ul, .resource-category ul {
+            list-style: none;
+        }
+        
+        .tool-category li, .resource-category li {
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tool-category li:last-child, .resource-category li:last-child {
+            border-bottom: none;
+        }
+        
+        .resource-total {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 20px;
+            background: rgba(76, 201, 240, 0.15);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .resource-total h4 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .resource-total p {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f0f3ff 0%, #e6e9ff 100%);
+        }
+        
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            width: 320px;
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .pricing-header {
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .pricing-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+        
+        .price span {
+            font-size: 1.2rem;
+            font-weight: normal;
+        }
+        
+        .pricing-features {
+            padding: 30px;
+        }
+        
+        .pricing-features ul {
+            list-style: none;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features li i {
+            color: var(--success);
+        }
+        
+        .pricing-footer {
+            padding: 0 30px 30px;
+            text-align: center;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(67, 97, 238, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(67, 97, 238, 0.05);
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer-content {
+            padding: 20px 0;
+        }
+        
+        .faq-item.active .faq-question {
+            background: rgba(67, 97, 238, 0.1);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(120deg, var(--secondary), #2a075e);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero {
+                text-align: center;
+            }
+            
+            .hero-content {
+                margin: 0 auto;
+            }
+            
+            .hero-image {
+                position: relative;
+                width: 80%;
+                margin: 40px auto 0;
+                transform: none;
+                top: auto;
+                right: auto;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-crown fa-2x"></i>
+                <h1>ডিজিটাল প্রোডাক্ট স্টোর</h1>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">হোম</a></li>
+                    <li><a href="#products">প্রোডাক্টস</a></li>
+                    <li><a href="#features">বৈশিষ্ট্য</a></li>
+                    <li><a href="#pricing">মূল্য</a></li>
+                    <li><a href="#testimonials">পর্যালোচনা</a></li>
+                </ul>
+            </nav>
+            
+            <a href="#pricing" class="cta-button">এখনই কিনুন</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="hero-content">
+                <h2>আপনার ডিজিটাল সাফল্যের জন্য সম্পূর্ণ টুলকিট</h2>
+                <p>প্রিমিয়াম সফটওয়্যার, ক্লাউড টুলস, গ্রাফিক্স রিসোর্স এবং ট্রেনিংয়ের বিশাল সংগ্রহ - সবকিছু এক জায়গায়!</p>
+                
+                <div class="hero-buttons">
+                    <a href="#products" class="cta-button">বিস্তারিত দেখুন</a>
+                    <a href="#features" class="btn-secondary">বৈশিষ্ট্য সমূহ</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'><rect width='500' height='300' fill='%233a0ca3'/><circle cx='250' cy='150' r='80' fill='%234361ee'/><text x='250' y='160' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>Premium Bundle</text></svg>" alt="Digital Product Bundle">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>কেন আমাদের প্রোডাক্ট বাছবেন?</h2>
+                <p>একক প্যাকেজে সফলতার জন্য প্রয়োজনীয় সবকিছু</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>সম্পূর্ণ টুলকিট</h3>
+                        <p>গ্রাফিক ডিজাইন, ভিডিও এডিটিং, এসইও, এআই টুলস - সবকিছু এক জায়গায়। আপনার সমস্ত ডিজিটাল প্রয়োজন মেটানোর জন্য ১০০+ প্রিমিয়াম টুলস।</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>বিশাল রিসোর্স লাইব্রেরি</h3>
+                        <p>৪টিবি+ ডিজিটাল রিসোর্স - গ্রাফিক্স টেমপ্লেট, কোর্স, ইবুক, সফটওয়্যার এবং আরও অনেক কিছু। কখনই রিসোর্সের অভাব হবে না।</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>আয় বৃদ্ধির কৌশল</h3>
+                        <p>আমরা কেবল টুলস দিই না - আমরা আপনাকে আয় বাড়ানোর কার্যকর কৌশল শেখাই। ডিজিটাল মার্কেটিং থেকে ফ্রিল্যান্সিং পর্যন্ত সমস্ত কিছু কভার করা হয়েছে।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>আমাদের প্রিমিয়াম অফারসমূহ</h2>
+                <p>আপনার ডিজিটাল যাত্রাকে ত্বরান্বিত করুন</p>
+            </div>
+            
+            <!-- Step 6: Premium Bundle -->
+            <div class="module-card">
+                <h3>স্টেপ ৬: প্রিমিয়াম সাবস্ক্রিপশন বান্ডেল</h3>
+                <div class="tool-categories">
+                    <!-- Cloud Tools -->
+                    <div class="tool-category">
+                        <h4><i class="fas fa-cloud"></i> ক্লাউড টুলস</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Envato Elements (Cloud)</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Semrush (Cloud)</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> ChatGPT (Cloud)</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Links Indexer (Cloud)</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Graphic Design -->
+                    <div class="tool-category">
+                        <h4><i class="fas fa-paint-brush"></i> গ্রাফিক ডিজাইন</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Canva Pro</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Placeit</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Vista Create</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Picsart</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Sora</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> PhotoRoom</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Figma</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- SEO & Marketing -->
+                    <div class="tool-category">
+                        <h4><i class="fas fa-chart-line"></i> এসইও ও মার্কেটিং</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Moz Pro</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Wordtracker</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> SimilarWeb</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Helium 10</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Sell The Trend</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- AI & Writing -->
+                    <div class="tool-category">
+                        <h4><i class="fas fa-robot"></i> এআই ও লেখালেখি</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> ChatGPT</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Grammarly</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> You.com</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Perplexity Ai</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Blackbox Ai</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Video Editing -->
+                    <div class="tool-category">
+                        <h4><i class="fas fa-video"></i> ভিডিও এডিটিং</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> CapCut</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Motion Array</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Epidemic Sound</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Learning -->
+                    <div class="tool-category">
+                        <h4><i class="fas fa-book-open"></i> লার্নিং</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> EdX</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Scribd</li>
+                            <li><i class="fas fa-check-circle" style="color: green;"></i> Duolingo Super</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 7: Unlimited Resources -->
+            <div class="module-card">
+                <h3>স্টেপ ৭: আনলিমিটেড প্রিমিয়াম রিসোর্স</h3>
+                <div class="resource-categories">
+                    <!-- AI Bundle -->
+                    <div class="resource-category">
+                        <h4><i class="fas fa-brain"></i> এআই ও অটোমেশন বান্ডেল</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Google Gemini Access</li>
+                            <li><i class="fas fa-check"></i> 30,000+ ChatGPT Prompts</li>
+                            <li><i class="fas fa-check"></i> 9000+ AI Tools Database</li>
+                            <li><i class="fas fa-check"></i> 2100+ Midjourney Prompts</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Software -->
+                    <div class="resource-category">
+                        <h4><i class="fas fa-laptop-code"></i> প্রিমিয়াম সফটওয়্যার</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 150+ Pre-Activated Premium Software</li>
+                            <li><i class="fas fa-check"></i> All Adobe Software (Activated)</li>
+                            <li><i class="fas fa-check"></i> Wondershare Filmora 12</li>
+                            <li><i class="fas fa-check"></i> IDM Lifetime</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Mobile Apps -->
+                    <div class="resource-category">
+                        <h4><i class="fas fa-mobile-alt"></i> প্রিমিয়াম মোবাইল অ্যাপস</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> CapCut</li>
+                            <li><i class="fas fa-check"></i> KineMaster Pro</li>
+                            <li><i class="fas fa-check"></i> InShot</li>
+                            <li><i class="fas fa-check"></i> PicsArt</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Graphics Bundle -->
+                    <div class="resource-category">
+                        <h4><i class="fas fa-palette"></i> গ্রাফিক্স মেগা বান্ডেল</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 100,000+ T-Shirt Designs</li>
+                            <li><i class="fas fa-check"></i> 30,000+ Social Media Post Bundles</li>
+                            <li><i class="fas fa-check"></i> 5000+ Editable Canva Templates</li>
+                            <li><i class="fas fa-check"></i> 2TB Graphics Mega Bundle</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-total">
+                        <h4>মোট স্টোরেজ</h4>
+                        <p>🎁 4TB+ ডিজিটাল প্রোডাক্ট কালেকশন</p>
+                        <p>✅ ইত্যাদি সহ আরও অনেক Bundle রয়েছে এই package এ</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 8: Earning Methods -->
+            <div class="module-card">
+                <h3>স্টেপ ৮: টপ আর্নিং সিক্রেট মেথড</h3>
+                <div class="feature-content" style="padding: 30px;">
+                    <ul class="module-list">
+                        <li class="module-item"><i class="fas fa-hand-holding-usd"></i> ডেইলি লাইভ ইনকাম করার উপায়</li>
+                        <li class="module-item"><i class="fas fa-shopping-cart"></i> মার্কেটে প্রোডাক্ট সেল করার কৌশল</li>
+                        <li class="module-item"><i class="fab fa-facebook"></i> ফ্রি ফেসবুক বুস্ট পদ্ধতি</li>
+                        <li class="module-item"><i class="fas fa-chart-line"></i> প্রাকটিক্যাল ইনকাম ডেমো</li>
+                        <li class="module-item"><i class="fas fa-lightbulb"></i> নতুন আর্নিং স্ট্র্যাটেজি</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>মূল্য পরিকল্পনা</h2>
+                <p>সুবিধামত প্যাকেজ নির্বাচন করুন এবং আজই শুরু করুন</p>
+            </div>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>স্ট্যান্ডার্ড</h3>
+                        <div class="price">৳২,৯৯৯ <span>/ এককালীন</span></div>
+                        <p>শুরু করার জন্য আদর্শ</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> প্রিমিয়াম টুলস এক্সেস (৫০+)</li>
+                            <li><i class="fas fa-check"></i> ১টিবি রিসোর্স লাইব্রেরি</li>
+                            <li><i class="fas fa-check"></i> বেসিক আর্নিং মেথড</li>
+                            <li><i class="fas fa-check"></i> ইমেল সাপোর্ট</li>
+                            <li><i class="fas fa-times"></i> অ্যাডভান্সড ট্রেনিং</li>
+                            <li><i class="fas fa-times"></i> প্রাইভেট কমিউনিটি</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#" class="cta-button">এখনই কিনুন</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card" style="transform: scale(1.05); z-index: 2; border: 2px solid var(--accent);">
+                    <div class="pricing-header" style="background: linear-gradient(120deg, var(--accent), #d0006f);">
+                        <h3>প্রিমিয়াম</h3>
+                        <div class="price">৳৪,৯৯৯ <span>/ এককালীন</span></div>
+                        <p>বেস্ট সেলার</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> সমস্ত প্রিমিয়াম টুলস এক্সেস (১০০+)</li>
+                            <li><i class="fas fa-check"></i> সম্পূর্ণ ৪টিবি+ রিসোর্স লাইব্রেরি</li>
+                            <li><i class="fas fa-check"></i> অ্যাডভান্সড আর্নিং মেথড</li>
+                            <li><i class="fas fa-check"></i> প্রাইওরিটি সাপোর্ট</li>
+                            <li><i class="fas fa-check"></i> প্রাইভেট কমিউনিটি এক্সেস</li>
+                            <li><i class="fas fa-check"></i> মাস্টারক্লাস ট্রেনিং</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#" class="cta-button">এখনই কিনুন</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>এন্টারপ্রাইজ</h3>
+                        <div class="price">৳৯,৯৯৯ <span>/ এককালীন</span></div>
+                        <p>টিমের জন্য সেরা</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> ৫টি ইউজার একাউন্ট</li>
+                            <li><i class="fas fa-check"></i> সমস্ত প্রিমিয়াম ফিচার</li>
+                            <li><i class="fas fa-check"></i> ডেডিকেটেড অ্যাকাউন্ট ম্যানেজার</li>
+                            <li><i class="fas fa-check"></i> কাস্টম ট্রেনিং সেশন</li>
+                            <li><i class="fas fa-check"></i> প্রাইওরিটি আপডেট</li>
+                            <li><i class="fas fa-check"></i> হোয়াইট-লেবেল সাপোর্ট</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#" class="cta-button">এখনই কিনুন</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>গ্রাহক পর্যালোচনা</h2>
+                <p>আমাদের গ্রাহকরা যা বলেন</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "এই প্রোডাক্টটি আমার ফ্রিল্যান্সিং ক্যারিয়ার বদলে দিয়েছে। এখন আমি মাসে ৮০,০০০ টাকা আয় করছি যা আগে কখনো ভাবিনি। রিসোর্সের বিশাল কালেকশন এবং ট্রেনিং সেশনগুলো অসাধারণ!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">এস</div>
+                        <div class="author-info">
+                            <h4>এহসানুল হক</h4>
+                            <p>গ্রাফিক ডিজাইনার</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "আমার ছোট ই-কমার্স বিজনেসের জন্য যা দরকার সবকিছু এক জায়গায় পেয়েছি। ক্যানভা টেমপ্লেট, মার্কেটিং টুলস, এসইও রিসোর্স - সবকিছু! ৩ মাসে আমার সেল ২০০% বেড়েছে।"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">আর</div>
+                        <div class="author-info">
+                            <h4>রোকেয়া খাতুন</h4>
+                            <p>ই-কমার্স মালিক</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "ভিডিও এডিটিং টুলস এবং স্টক রিসোর্সের জন্য এই প্যাকেজটি অসাধারণ। আমার YouTube চ্যানেলের ভিউয়ার ১০০,০০০ ছাড়িয়েছে এবং এখন মাসিক আয় ৫০,০০০ টাকার উপরে। ইনকাম মেথডগুলো খুবই কার্যকরী।"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">এম</div>
+                        <div class="author-info">
+                            <h4>মাহমুদুল হাসান</h4>
+                            <p>ইউটিউবার</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>সচরাচর জিজ্ঞাসা</h2>
+                <p>আপনার প্রশ্নের উত্তর খুঁজুন</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        কিভাবে আমি প্রোডাক্টটি কিনতে পারি? 
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            উপরের 'এখনই কিনুন' বাটনে ক্লিক করে আপনি আমাদের সিকিউর পেমেন্ট গেটওয়ে এর মাধ্যমে পেমেন্ট সম্পন্ন করতে পারবেন। পেমেন্ট সফল হলে আপনি সাথে সাথে অ্যাকাউন্ট এক্সেস পেয়ে যাবেন।
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        প্রোডাক্ট ডেলিভারি কিভাবে পাবো?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            পেমেন্ট সফল হওয়ার সাথে সাথে আপনি একটি ডাউনলোড লিঙ্ক এবং অ্যাকাউন্ট এক্টিভেশন ইন্সট্রাকশন ইমেইল পাবেন। ক্লাউড টুলসের জন্য লগইন ক্রেডেনশিয়াল প্রদান করা হবে। রিসোর্সগুলো ডাউনলোড করা যাবে অথবা ক্লাউড স্টোরেজে অ্যাক্সেস দেওয়া হবে।
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        আমার কম্পিউটার সিস্টেমে রিকোয়ারমেন্ট কি?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            সফটওয়্যার প্যাকেজের জন্য উইন্ডোজ ১০ বা নতুন ভার্সন প্রয়োজন। ইন্টারনেট কানেকশন প্রয়োজন ক্লাউড টুলস ব্যবহারের জন্য। গ্রাফিক্স কাজের জন্য ৮জিবি র্যাম এবং ডেডিকেটেড গ্রাফিক্স কার্ড সুপারিশ করা হয়, তবে বাধ্যতামূলক নয়।
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        আমি কি মোবাইল থেকে প্রোডাক্ট ব্যবহার করতে পারব?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            হ্যাঁ, আমাদের প্যাকেজে মোবাইল অ্যাপস এবং ক্লাউড-বেসড টুলস অন্তর্ভুক্ত রয়েছে যা যেকোনো স্মার্টফোন বা ট্যাবলেট থেকে অ্যাক্সেস করা যাবে। এছাড়াও মোবাইল ভিডিও এডিটিং অ্যাপস এবং গ্রাফিক্স টুলস রয়েছে।
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ডিজিটাল প্রোডাক্ট স্টোর</h3>
+                    <p>আপনার ডিজিটাল সাফল্যের জন্য সম্পূর্ণ টুলকিট। প্রিমিয়াম সফটওয়্যার, ক্লাউড টুলস, গ্রাফিক্স রিসোর্স এবং ট্রেনিংয়ের বিশাল সংগ্রহ।</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>লিংকস</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> হোম</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> প্রোডাক্টস</a></li>
+                        <li><a href="#features"><i class="fas fa-chevron-right"></i> বৈশিষ্ট্য</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-right"></i> মূল্য</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> পর্যালোচনা</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>সাপোর্ট</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> এফএকিউ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> প্রাইভেসি পলিসি</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> রিফান্ড পলিসি</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> যোগাযোগ করুন</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>যোগাযোগ</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</a></li>
+                        <li><a href="tel:+8801712345678"><i class="fas fa-phone-alt"></i> +৮৮০ ১৭১২-৩৪৫৬৭৮</a></li>
+                        <li><a href="mailto:support@digitalstore.com"><i class="fas fa-envelope"></i> support@digitalstore.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; ২০২৩ ডিজিটাল প্রোডাক্ট স্টোর। সকল স্বত্ব সংরক্ষিত।
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
